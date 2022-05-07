@@ -30,7 +30,7 @@ export function UserAuthContextProvider({ children }) {
       const unsubscribe = onAuthStateChanged(authenticationApp, (currentuser) => {
         setUser(currentuser);
     });
-  
+
     return () => {
         unsubscribe();
       };

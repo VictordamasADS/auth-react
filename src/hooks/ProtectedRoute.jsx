@@ -4,7 +4,12 @@ import { useUserAuth } from "../context/context";
 
 const ProtectedRoute = () => {
   const { user } = useUserAuth();
-  return user ? <Outlet /> : <Navigate to="/" />;
+
+  return (
+    <>
+      {user ? <Outlet /> : <Navigate to="/" />};     
+    </>
+  )
 };
 
 export default ProtectedRoute;

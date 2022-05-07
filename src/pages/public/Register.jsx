@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/app.css'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import '../../styles/global.css'
 import { useUserAuth } from '../../context/context';
+import { 
+    Button,
+    Container, 
+    Form, 
+    Input, 
+    Text, 
+    Title } 
+from '../../styles/Style';
 
 export const Register = () => {
     const [email, setEmail] = useState('');
@@ -13,32 +23,34 @@ export const Register = () => {
         
         try {
             await signUp(email, password);
+            toast.success('Usuário cadastrado com sucesso')
         } catch(err) {
-            console.log('falha ao realizar o cadastro')
+            toast.error('Este email já esta cadastrado')
         }
     }
 
     return (
-        <div className='container'>
-            <div className='div'>
-                    <h1 className='title'>Cadastrar-se</h1>
-                    <input 
+        <Container>
+            <ToastContainer position="top-center" />
+            <Form>
+                    <Title className='title'>Cadastrar-se</Title>
+                    <Input 
                         type='email'
                         placeholder='Digite seu email' 
                         className='input' 
                         onChange={(event) => setEmail(event.target.value)}
                     />
 
-                    <input 
+                    <Input 
                     type='password' 
                     placeholder='Digite seu senha' 
                     className='input' 
                     onChange={(event) => setPassword(event.target.value)}
                     />
 
-                    <button className='button' onClick={handleSubmit}>Cadastrar</button>
-                    <h4 className='text'>Já possui uma conta, entre agora mesmo <Link to='/' className='link'>Entrar</Link></h4>
-            </div>
-        </div>
+                    <Button className='button' onClick={handleSubmit}>Cadastrar</Button>
+                    <Text className='text'>Já possui uma conta, entre agora mesmo <Link to='/' className='link'>Entrar</Link></Text>
+            </Form>
+        </Container>
     )
 }
