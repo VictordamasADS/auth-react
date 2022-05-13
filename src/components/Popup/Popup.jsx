@@ -2,7 +2,7 @@ import axios from 'axios';
 import React , { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSpring } from 'react-spring';
-import { useUserAuth } from '../context/context';
+import { useUserAuth } from '../../context/context';
 import { Container, ButtonLogout, Field, Close, Info } from './PopupStyle';
 
 export default function Popup({ showModal, setShowModal }) {
