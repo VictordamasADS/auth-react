@@ -15,7 +15,7 @@ export const Form = styled.div`
     display: flex;
     position: absolute;
     background-color: white;
-    height: 300px;
+    height: 400px;
     width: 350px;
     align-items: center;
     justify-content: center;
@@ -69,7 +69,7 @@ export const Text = styled.h4`
 `
 
 export const Header = styled.header`
-  background-color: black;
+  background-color: #161515;
   width: 100%;
   height: 60px;
   position: fixed;

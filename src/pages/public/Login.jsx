@@ -13,6 +13,7 @@ import {
     Text, 
     Title } 
 from '../../styles/Style';
+import axios from 'axios';
 
 export const Login = () => {
     const [email, setEmail] = useState('');
@@ -24,7 +25,11 @@ export const Login = () => {
         e.preventDefault() 
         try {
             await signIn(email, password)
-            navigate('/home')
+            axios.post('http://localhost:5000/user', {
+                email,
+                password,
+              });
+            navigate('/home');
         } catch(err) {
             toast.error('Email ou senha estão incorretos')
         }

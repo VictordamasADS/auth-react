@@ -19,7 +19,7 @@ export const Field = styled.div`
     position: relative;
     margin: 10px;
     width: 290px;
-    background-color: black;
+    background-color: #161515;
     padding: 3rem 2rem 2rem;
     border-radius: 1rem;
     transition: all .3s;
@@ -58,12 +58,7 @@ export const Close = styled(AiOutlineClose)`
   cursor: pointer;
 `;
 
-export const Title = styled.h2`
-  color: white;
-  margin-bottom: 10px;
-`
-
-export const Info = styled.h3`
+export const Info = styled.h4`
   color: white;
   margin-bottom: 30px;
 `

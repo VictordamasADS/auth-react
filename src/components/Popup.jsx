@@ -1,16 +1,22 @@
-import React , { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
+import React , { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSpring } from 'react-spring';
 import { useUserAuth } from '../context/context';
-import { Container, ButtonLogout, Field, Close, Info, Title } from './PopupStyle';
+import { Container, ButtonLogout, Field, Close, Info } from './PopupStyle';
 
 export default function Popup({ showModal, setShowModal }) {
-  const { logOut, user } = useUserAuth();
-  const [userLogged, setUserLogged] = useState('')
+  const { logOut } = useUserAuth();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [telefone, setTelefone] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    setUserLogged(user.email)
+  axios.get('http://localhost:5000/user', {
+  }).then((response) => {
+    setName(response.data.user_name)
+    setEmail(response.data.user_email)
+    setTelefone(response.data.user_telefone)
   })
 
   const handleLogout = async () => {
@@ -44,8 +50,9 @@ export default function Popup({ showModal, setShowModal }) {
     <Container ref={modalRef} onClick={closeModal}>
         <Field style={animation}>
             <Close onClick={() => setShowModal((prev) => !prev)} />
-            <Title>User:</Title>
-            <Info>{userLogged}</Info>
+            <Info>Nome: {name}</Info>
+            <Info>Email: {email}</Info>
+            <Info>Telefone: {telefone}</Info>
             <ButtonLogout type="button" onClick={handleLogout}>Sair</ButtonLogout>
         </Field>
     </Container>
