@@ -31,7 +31,7 @@ export const Login = () => {
               });
             navigate('/home');
         } catch(err) {
-            toast.error('Email ou senha estão incorretos')
+            toast.error('Email ou senha estão incorretos.')
         }
     }
 
