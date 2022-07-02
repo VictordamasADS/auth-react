@@ -4,7 +4,7 @@ import { FaUserCircle } from 'react-icons/fa';
 
 export const Container = styled.div`
     width: 100%;
-    height: 850px;
+    height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -14,18 +14,17 @@ export const Container = styled.div`
 export const Form = styled.div`
     display: flex;
     position: absolute;
-    background-color: white;
+    background-color: #161b23;
+    border: 1px solid #F6C340;
     height: 400px;
-    width: 350px;
+    width: 340px;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     flex-direction: column;
-
     @media (min-width: 768px) {
         width: 500px;
     }
-
     @media (min-width: 900px) {
         width: 800px;
     }
@@ -33,39 +32,39 @@ export const Form = styled.div`
 
 export const Title = styled.h1`
     margin-bottom: 10px;
-    background-color: white;
-    color: black;
+    color: white;
 `
 
 export const Input = styled.input`
     padding: 10px;
-    border: 1px solid rgb(129, 127, 127);
+    border: none;
+    border-radius: 5px;
     background-color: white;
     margin-bottom: 10px;
-    width: 90%;
+    width: 80%;
 `
 
 export const Button = styled.button`
-    background-color: rgb(19, 83, 83);
+    background-color: black;
     border-radius: 20px;
     border: none;
     color: white;
-    width: 80%;
+    font-family: cursive;
+    font-weight: 700;
+    width: 50%;
     cursor: pointer;
     padding: 10px;
-
     @media (min-width: 768px) {
-        width: 400px;
+        width: 300px;
     }
-
     :hover {
-        background-color: rgb(39, 163, 163);
+        opacity: 0.5;
     }
 `
 
 export const Text = styled.h4`
     margin-top: 10px;
-    color: black;
+    color: white;
 `
 
 export const Header = styled.header`
@@ -82,17 +81,14 @@ export const Header = styled.header`
 
 export const Logo = styled.div`
   display: none;
-
   @media (min-width: 768px) {
     display: block;
-
     img {
       width: 100%;
       border-radius: 10px;
       height: 40px;
     }
   }
-
 `;
 
 export const NavLink = styled(Link)`
@@ -110,7 +106,6 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-around;
-
   @media (min-width: 768px) {
     justify-content: space-between;
     width: 90%;
@@ -129,6 +124,6 @@ export const IconUser = styled(FaUserCircle)`
   cursor: pointer;
   font-size: 28px;
   &:hover {
-    color: yellow;
+    color: #F6C340;
   }
 `;

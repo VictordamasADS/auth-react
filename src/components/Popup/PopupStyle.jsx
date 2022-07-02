@@ -9,6 +9,7 @@ export const Container = styled.div`
   height: 100vh;
   display: grid;
   align-items: center;
+  justify-content: center;
   transition: all .3s;
   z-index: 1500;
   padding: 10px;
@@ -18,16 +19,15 @@ export const Field = styled.div`
     height: 250px;
     position: relative;
     margin: 10px;
-    width: 290px;
+    width: 280px;
     background-color: #161515;
-    padding: 3rem 2rem 2rem;
+    padding: 2.5rem 0.1rem;
     border-radius: 1rem;
     transition: all .3s;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-
     @media screen and (min-width: 576px) {
       margin: auto;
       width: 380px;
@@ -53,8 +53,8 @@ export const Close = styled(AiOutlineClose)`
   border-radius: 50%;
   font-size: 1.5rem;
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1rem;
   cursor: pointer;
 `;
 
